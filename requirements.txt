@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+google-generativeai
+python-dotenv
+pillow
+transformers
+torch
+torchvision
+torchaudio
+pydantic
+pydantic-settings
