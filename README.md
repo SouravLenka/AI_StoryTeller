@@ -1,97 +1,70 @@
-# Image-to-Story Generator
+# ✨ AI StoryTeller: Transforming Images into Magic 📖
 
-A complete Python-only AI project using FastAPI and Google Gemini API to generate creative short stories based on image content.
+AI StoryTeller is a premium web application that breathes life into your photos. By leveraging the power of **BLIP (Image Captioning)** and **Google Gemini 2.0**, it transforms visual moments into enchanting, human-like stories with just a few clicks.
 
-## Features
+## 🚀 Features
 
-- **FastAPI**: Modern, fast (high-performance) web framework.
-- **Image Captioning**: Uses `Salesforce/blip-image-captioning-base` to describe images.
-- **Story Generation**: Google Gemini AI (`gemini-1.5-flash`) writes stories based on captions.
-- **Multipart Uploads**: Handles image uploads seamlessly.
-- **Metadata**: Optional `genre` and `mood` fields for customized storytelling.
+- **🎨 Premium Dark UI**: A modern, immersive interface featuring glassmorphism, smooth animations, and a "Magic" aesthetic.
+- **🖼️ Instant Image Preview**: See your moments immediately before they are transformed.
+- **🤖 Gemini 2.0 Powered**: Utilizes the latest `gemini-2.0-flash` model for intelligent and creative storytelling.
+- **🎭 Genre & Mood Control**: Guide the AI's creativity by selecting specific genres (Fantasy, Sci-Fi, Mystery) and moods (Whimsical, Cinematic, Tense).
+- **⚡ Real-time Feedback**: Engaging loading states and refined error handling ("Magic Interrupted") for a seamless experience.
 
-## Prerequisites
+## 🛠️ Tech Stack
 
-- Python 3.10+
-- Google Gemini API Key
+- **Backend**: FastAPI (Python)
+- **AI Models**:
+  - Image Captioning: Salesforce BLIP
+  - Storytelling: Google Gemini 2.0 Flash
+- **Frontend**: Vanilla HTML5, CSS3 (Modern Glassmorphism Design), JavaScript (ES6+)
+- **Environment**: Python Dotenv for secure key management.
 
-## Setup
+## 📦 Installation & Setup
 
-1. **Clone the repository** (if applicable) or enter the project directory.
-
-2. **Create a virtual environment**:
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Environment Variables**:
-   Ensure you have a `.env` file in the root directory with your API key:
-   ```env
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
-
-## Running the Application
-
-Start the FastAPI server:
+### 1. Clone the repository
 
 ```bash
-uvicorn app.main:app --reload
+git clone https://github.com/yourusername/AI-StoryTeller.git
+cd AI-StoryTeller
 ```
 
-The server will be available at `http://127.0.0.1:8000`.
+### 2. Create a Virtual Environment
 
-## API Documentation
-
-- **Interactive Swagger UI**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **Alternative ReDoc**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
-### Endpoint: `POST /generate-story`
-
-**Request**:
-
-- Type: `multipart/form-data`
-- Fields:
-  - `image`: The image file (jpg, jpeg, png)
-  - `genre` (optional): The story genre (e.g., "Scifi", "Fantasy")
-  - `mood` (optional): The story mood (e.g., "Mysterious", "Happy")
-
-**Response**:
-
-```json
-{
-  "image_caption": "a cat sitting on a table next to a computer",
-  "generated_story": "The neon glow of the monitor reflected in Whiskers' eyes..."
-}
+```bash
+python -m venv venv
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 ```
 
-## Project Structure
+### 3. Install Dependencies
 
-```
-image_to_story_fastapi/
-│
-├── app/
-│   ├── main.py              # FastAPI app entry
-│   ├── routes.py            # API routes
-│   ├── captioner.py         # Image → text logic
-│   ├── storyteller.py       # Gemini story generation logic
-│   ├── schemas.py           # Pydantic response models
-│   ├── utils.py             # Helpers
-│   └── __init__.py          # Package marker
-│
-├── .env                     # API keys (ignored by git)
-├── .gitignore               # Git rules
-├── requirements.txt         # Dependencies
-└── README.md                # This file
+```bash
+pip install -r requirements.txt
 ```
 
-## License
+### 4. Configuration
 
-MIT
+Create a `.env` file in the root directory and add your Google Gemini API key:
+
+```env
+GEMINI_API_KEY=your_actual_api_key_here
+```
+
+### 5. Run the Application
+
+```bash
+python -m app.main
+```
+
+Head over to `http://127.0.0.1:8000` to start crafting your stories!
+
+## 🛡️ Security & Privacy
+
+- **Secure Keys**: The `.env` file is protected and ignored by Git.
+- **Private Media**: The `uploads/` directory and temporary image files are excluded from commits to ensure your privacy.
+
+## 📜 License
+
+This project is licensed under the MIT License.
