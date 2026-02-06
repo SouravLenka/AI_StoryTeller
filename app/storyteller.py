@@ -21,8 +21,8 @@ class StoryTeller:
             raise ValueError("GEMINI_API_KEY not found.")
         
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash')
-        logger.info("Gemini AI StoryTeller initialized with gemini-2.0-flash.")
+        self.model = genai.GenerativeModel('gemini-1.5-flash')
+        logger.info("Gemini AI StoryTeller initialized with gemini-1.5-flash.")
 
 
     def generate_story(self, caption: str, genre: str = None, mood: str = None) -> str:
